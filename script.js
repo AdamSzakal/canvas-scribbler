@@ -5,8 +5,8 @@ let x = 0;
 let y = 0;
 
 [canvas.width, canvas.height] = [
-  window.innerWidth - 100,
-  window.innerHeight - 100,
+  window.innerWidth * 0.9,
+  window.innerHeight * 0.9,
 ];
 [ctx.lineJoin, ctx.lineCap] = ['round', 'round'];
 
