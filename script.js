@@ -1,5 +1,6 @@
 const canvas = document.querySelector('#draw');
 const ctx = canvas.getContext('2d');
+ctx.scale(2, 2);
 
 let x = 0;
 let y = 0;
