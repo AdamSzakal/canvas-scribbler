@@ -10,9 +10,9 @@ let y = 0;
 console.log(ctx.strokeStyle);
 ctx.lineWidth = 0.5;
 
-function draw() {
+function draw(n) {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
-  for (let i = 0; i < 500; i++) {
+  for (let i = 0; i < n; i++) {
     ctx.strokeStyle =
       'hsla(' + Math.floor(Math.random() * 360) + ', 77%, 77%, .3)';
     ctx.beginPath();
@@ -26,6 +26,10 @@ function draw() {
   }
 }
 
-draw(50);
+// draw(50);
 
-canvas.addEventListener('click', draw);
+canvas.addEventListener('click', function(e) {
+  draw((e.clientY / canvas.height) * 500);
+  console.log(e);
+  console.log((e.clientY / canvas.height) * 500);
+});
