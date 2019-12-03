@@ -4,17 +4,15 @@ const ctx = canvas.getContext('2d');
 let x = 0;
 let y = 0;
 
-[canvas.width, canvas.height] = [
-  window.innerWidth * 0.9,
-  window.innerHeight * 0.9,
-];
+[canvas.width, canvas.height] = [window.innerWidth, window.innerHeight];
 [ctx.lineJoin, ctx.lineCap] = ['round', 'round'];
 
 console.log(ctx.strokeStyle);
 ctx.lineWidth = 0.5;
 
-function draw(n) {
-  for (let i = 0; i < n; i++) {
+function draw() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  for (let i = 0; i < 500; i++) {
     ctx.strokeStyle =
       'hsla(' + Math.floor(Math.random() * 360) + ', 77%, 77%, .3)';
     ctx.beginPath();
@@ -28,4 +26,6 @@ function draw(n) {
   }
 }
 
-draw(500);
+draw(50);
+
+canvas.addEventListener('click', draw);
